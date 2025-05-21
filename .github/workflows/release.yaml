@@ -53,9 +53,7 @@ jobs:
       - name: upload-artifact
         uses: actions/upload-artifact@v4
         with:
-          name: docs-archive
+          name: github-pages
           path: root
       - name: deploy
         uses: actions/deploy-pages@v4
-        with:
-          artifact-name: docs-archive
