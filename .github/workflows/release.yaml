@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: generate
-        uses: openapi-generators/openapitools-generator-action
+        uses: openapi-generators/openapitools-generator-action@v1
         with:
           generator: html
           openapi-url: "https://raw.githubusercontent.com/unikorn-cloud/${{ matrix.component }}/refs/heads/main/pkg/openapi/server.spec.yaml"
