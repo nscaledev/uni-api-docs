@@ -28,13 +28,11 @@ jobs:
           generator: html
           openapi-url: "https://raw.githubusercontent.com/unikorn-cloud/${{ matrix.component }}/refs/heads/main/pkg/openapi/server.spec.yaml"
           command-args: -o ${{ matrix.component }}
-      - name: compress
-        run: tar -czf ${{ matrix.component }}.tar.gz ${{ matrix.component }}
       - name: upload-artifact
         uses: actions/upload-artifact@v4
         with:
-          name: "docs-archive-${{ matrix.component }}"
-          path: ${{ matrix.component }}.tar.gz
+          name: docs-component-${{ matrix.component }}
+          path: ${{ matrix.component }}
   deploy:
     runs-on: ubuntu-latest
     permissions:
@@ -44,19 +42,20 @@ jobs:
     needs:
       - build
     steps:
+      - name: make-root
+        run: mkdir root
       - name: download-artifacts
         uses: actions/download-artifact@v4
         with:
-          pattern: docs-archive-*
-      - name: concatenate-archive
-        run: tar --concatenate -zf docs-archive.tar.gz *.tar.gz
+          pattern: docs-component-*
+          merge-multiple: true
+          path: root
       - name: upload-artifact
         uses: actions/upload-artifact@v4
         with:
           name: docs-archive
-          path: docs-archive.tar.gz
+          path: root
       - name: deploy
         uses: actions/deploy-pages@v4
         with:
           artifact-name: docs-archive
-        
