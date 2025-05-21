@@ -31,7 +31,7 @@ jobs:
       - name: upload-artifact
         uses: actions/upload-artifact@v4
         with:
-          name: docs-component-${{ matrix.component }}
+          name: ${{ matrix.component }}
           path: artifact
   deploy:
     runs-on: ubuntu-latest
@@ -43,29 +43,29 @@ jobs:
       - build
     steps:
       - name: make-root
-        run: mkdir -p root/{identity,region,compute,kubernetes}
+        run: mkdir -p root
       - name: download-identity-artifact
         uses: actions/download-artifact@v4
         with:
-          pattern: docs-component-identity
-          path: root/identity
+          pattern: identity
+          path: root
       - name: download-region-artifact
         uses: actions/download-artifact@v4
         with:
-          pattern: docs-component-region
-          path: root/region
+          pattern: region
+          path: root
       - name: download-kubernetes-artifact
         uses: actions/download-artifact@v4
         with:
-          pattern: docs-component-kubernetes
-          path: root/kubernetes
+          pattern: kubernetes
+          path: root
       - name: download-compute-artifact
         uses: actions/download-artifact@v4
         with:
-          pattern: docs-component-compute
-          path: root/compute
+          pattern: compute
+          path: root
       - name: upload-artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
           path: root
