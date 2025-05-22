@@ -1,9 +1,6 @@
-# Unikorn API Documentation
+# UNI API Documentation
 
-![Unikorn Logo](https://raw.githubusercontent.com/unikorn-cloud/assets/main/images/logos/light-on-dark/logo.svg#gh-dark-mode-only)
-![Unikorn Logo](https://raw.githubusercontent.com/unikorn-cloud/assets/main/images/logos/dark-on-light/logo.svg#gh-light-mode-only)
-
-This repository contains generated OpenAPI documentation for Unikorn API endpoints.
+This repository contains generated OpenAPI documentation for UNI API endpoints.
 
 ## Endpoints
 
