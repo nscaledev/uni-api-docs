@@ -26,7 +26,7 @@ jobs:
         uses: openapi-generators/openapitools-generator-action@v1
         with:
           generator: html
-          openapi-url: "https://raw.githubusercontent.com/unikorn-cloud/${{ matrix.component }}/refs/tags/${{ github.ref_name }}/pkg/openapi/server.spec.yaml"
+          openapi-url: "https://raw.githubusercontent.com/unikorn-cloud/${{ matrix.component }}/refs/heads/main/pkg/openapi/server.spec.yaml"
           command-args: -o artifact
       - name: upload-artifact
         uses: actions/upload-artifact@v4
