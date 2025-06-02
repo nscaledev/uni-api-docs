@@ -1,6 +1,6 @@
-# UNI API Documentation
+# API Documentation
 
-This repository contains generated OpenAPI documentation for UNI API endpoints.
+This repository contains generated OpenAPI documentation for API endpoints.
 
 ## Endpoints
 
