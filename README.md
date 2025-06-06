@@ -2,6 +2,8 @@
 
 This repository contains generated OpenAPI documentation for API endpoints.
 
+Current version: v1.3.0.
+
 ## Endpoints
 
 * [Identity API](https://nscaledev.github.io/uni-api-docs/identity/index.html)
