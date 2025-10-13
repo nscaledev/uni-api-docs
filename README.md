@@ -2,7 +2,7 @@
 
 This repository contains generated OpenAPI documentation for API endpoints.
 
-Current version: v1.8.0.
+Current version: v1.9.0.
 
 ## Endpoints
 
